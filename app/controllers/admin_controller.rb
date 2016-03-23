@@ -128,5 +128,6 @@ class AdminController < ApplicationController
       if current_user.user_type == "superAdmin"
         else
           redirect_to root_path, notice: "Access Denied!"
+        end
     end
 end
