@@ -1,8 +1,9 @@
 class AdminController < ApplicationController
+  before_action :check_user
 	before_action :authenticate_user!
 	before_action :set_user, only: [ :user_edit, :user_update, :user_destroy]
 	before_action :set_post, only: [ :post_edit, :post_update]
-	before_action :check_user, only: [:user_data, :user_new, :user_create, :user_edit, :user_update, :user_destroy]
+	before_action :check_user_super, only: [:user_data, :user_new, :user_create, :user_edit, :user_update, :user_destroy]
  layout false
   def index
   	if current_user.user_type == "superAdmin"
@@ -118,9 +119,14 @@ class AdminController < ApplicationController
      params.require(:post).permit(:title,:body)
     end
     def check_user
-    	if current_user.user_type == "superAdmin"
+    	if current_user.user_type == "superAdmin" || current_user.user_type == "admin" || current_user.user_type == "manager"
     		else
-    			redirect_to admin_path, notice: "Access Denied!"
+    			redirect_to root_path, notice: "Access Denied!"
     	end
+    end
+    def check_user_super
+      if current_user.user_type == "superAdmin"
+        else
+          redirect_to root_path, notice: "Access Denied!"
     end
 end
