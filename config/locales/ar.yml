@@ -1,0 +1,26 @@
+ar:
+  activerecord:
+    attributes:
+      post:
+        title: "عنوان"
+        body: "الجسم"
+  forms:
+    messages:
+      success: "نجحت العملية!"
+    buttons:
+      edit: "تحرير"
+      submit: "Submit"
+  menu:
+    new_post: "إضافة مقال"
+    languages:
+            lang: "لغة"
+            fr: "Français"
+            en: "English"
+            ar: "العربية"
+  posts:
+    index:
+      title: "قائمة المواد"
+    edit:
+      title: "إضافة المادة"
+    new:
+      title: "مادة جديدة"

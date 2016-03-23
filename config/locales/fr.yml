@@ -1,0 +1,26 @@
+fr:
+  activerecord:
+    attributes:
+      post:
+        title: "Titre"
+        body: "Corps"
+  forms:
+    messages:
+      success: "Opération réussie!!"
+    buttons:
+      edit: "Modifier"
+      submit: "Submit"
+  menu:
+    new_post: "Ajouter un article"
+    languages:
+                lang: "لغة"
+                fr: "Français"
+                en: "English"
+                ar: "العربية"
+  posts:
+    index:
+      title: "Liste des articles"
+    edit:
+      title: "Ajouter l'article"
+    new:
+      title: "Nouvel article"

@@ -1,0 +1,40 @@
+<script>
+  $('#edit').froalaEditor({key: 'ZliJ2A-21mnE4hdplopgwxE5ida=='});
+</script>
+
+<%= form_for(@post) do |f| %>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-group title">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, id: "title", class: "form-control", placeholder: "Title" %>
+    </div><!--//form-group-->
+    <div class="form-group body">
+      <%= f.label :body %><br>
+      <div >
+      <%= f.text_area :body, id: "wysiwyg", class: "form-control", placeholder: "Dody" %>
+      </div>
+    </div><!--//form-group-->
+    <%= f.submit :class => "btn btn-theme" %>
+<% end %>
+
+<script>
+  $('#wysiwyg').froalaEditor({
+    key: "<%=ENV['FROALA']%>",
+    heightMin: '200px',
+    toolbarButtons: [
+      'fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|',
+      'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|',
+      'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|',
+      'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html']
+  })
+</script>

@@ -1,0 +1,178 @@
+<% if @l == :fr %>
+
+    <!-- ******HEADER****** -->
+    <header class="header">
+      <div class="top-bar">
+        <div class="container">
+          <ul class="social-icons col-md-6 col-sm-6 col-xs-12 hidden-xs">
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/Universit%C3%A9-du-Sahel-de-Bamako-655344637859065/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+          </ul><!--//social-icons-->
+          <form class="pull-right search-form" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search the site...">
+            </div>
+            <button type="submit" class="btn btn-theme">Go</button>
+          </form>
+        </div>
+      </div><!--//to-bar-->
+      <div class="header-main container">
+        <h1 class="logo col-md-2 col-sm-2">
+          <%= link_to image_tag("logo.png"), root_path %>
+        </h1><!--//logo-->
+
+        <h1 class="logo col-md-8 col-sm-8 text-center">
+          UNIVERSITÉ DU SAHEL
+        </h1><!--//logo-->
+
+        <div class="info col-md-2 col-sm-2">
+          <ul class="menu-top navbar-right hidden-xs">
+            <li class="divider"><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+            <li ><%= link_to t('menu.languages.ar'), change_locale_path(:ar) %></li>
+          </ul><!--//menu-top-->
+          <br/>
+
+        </div><!--//info-->
+      </div><!--//header-main-->
+    </header><!--//header-->
+
+    <!-- ******NAV****** -->
+    <nav class="main-nav" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button><!--//nav-toggle-->
+        </div><!--//navbar-header-->
+        <div class="navbar-collapse collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active nav-item"><%= link_to "ACCEUIL", root_path, class: "" %></li>
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">L'UNIVERSITÉ
+                <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Présentation", page_path(1) %></li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">LA
+                FORMATION <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Informatique</a></li>
+                <li><a href="#">Arabe</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Actualités
+                <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="<%= posts_path %>"><i class="fa fa-newspaper-o"></i> Liste d'actualités</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><%= link_to "Contact", welcomes_contact_path %></li>
+          </ul><!--//nav-->
+        </div><!--//navabr-collapse-->
+      </div><!--//container-->
+    </nav><!--//main-nav-->
+
+
+<% else %>
+
+    <!-- ******HEADER****** -->
+    <header class="header">
+      <div class="top-bar">
+        <div class="container">
+          <ul class="social-icons col-md-6 col-sm-6 col-xs-12 hidden-xs">
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/Universit%C3%A9-du-Sahel-de-Bamako-655344637859065/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+          </ul><!--//social-icons-->
+          <form class="pull-right search-form" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search the site...">
+            </div>
+            <button type="submit" class="btn btn-theme">Go</button>
+          </form>
+        </div>
+      </div><!--//to-bar-->
+      <div class="header-main container">
+        <h1 class="logo col-md-2 col-sm-2">
+          <%= link_to image_tag("logo.png"), root_path %>
+        </h1><!--//logo-->
+
+        <h1 class="logo col-md-8 col-sm-8 text-center">جامعة الساحل</h1><!--//logo-->
+
+        <div class="info col-md-2 col-sm-2">
+          <ul class="menu-top navbar-right hidden-xs">
+            <li class="divider"><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+            <li ><%= link_to t('menu.languages.ar'), change_locale_path(:ar) %></li>
+          </ul><!--//menu-top-->
+          <br/>
+
+        </div><!--//info-->
+      </div><!--//header-main-->
+    </header><!--//header-->
+
+    <!-- ******NAV****** -->
+    <nav class="main-nav" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button><!--//nav-toggle-->
+        </div><!--//navbar-header-->
+        <div class="navbar-collapse collapse pull-right" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+
+
+            <li class="nav-item"><%= link_to "اتصال", welcomes_contact_path %></li>
+
+
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#"> <i class="fa fa-angle-down"></i> أنباء
+               </a>
+              <ul class="dropdown-menu">
+                <li><a href="<%= posts_path %>"><i class="fa fa-newspaper-o"></i> قائمة الأخبار</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#"><i class="fa fa-angle-down"></i> تدريب</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">حاسوب</a></li>
+                <li><a href="#">العربية</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#"><i class="fa fa-angle-down"></i> جامعة
+                </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "حول", page_path(1) %></li>
+              </ul>
+            </li>
+            <li class="active nav-item"><%= link_to "الرئسيــة", root_path, class: "" %></li>
+
+
+
+          </ul><!--//nav-->
+        </div><!--//navabr-collapse-->
+      </div><!--//container-->
+    </nav><!--//main-nav-->
+
+<% end %>

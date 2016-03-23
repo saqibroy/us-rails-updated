@@ -1,0 +1,153 @@
+<% if @l == :fr %>
+    <div class="page-wrapper">
+      <header class="page-heading clearfix">
+        <h1 class="heading-title pull-left">Contact</h1>
+
+        <div class="breadcrumbs pull-right">
+          <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-label">You are here:</li>
+            <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+            <li class="current">Contact</li>
+          </ul>
+        </div><!--//breadcrumbs-->
+      </header>
+      <div class="page-content">
+        <div class="row">
+          <article class="contact-form col-md-8 col-sm-7  page-row">
+            <h3 class="title">Entrer en contact</h3>
+
+
+            <form>
+              <div class="form-group name">
+                <label for="name">Name</label>
+                <input id="name" type="text" class="form-control" placeholder="Entrez votre nom">
+              </div><!--//form-group-->
+              <div class="form-group email">
+                <label for="email">Email<span class="required">*</span></label>
+                <input id="email" type="email" class="form-control" placeholder="Entrer votre Email">
+              </div><!--//form-group-->
+              <div class="form-group phone">
+                <label for="phone">Phone</label>
+                <input id="phone" type="tel" class="form-control" placeholder="Entrez votre numéro de contact">
+              </div><!--//form-group-->
+              <div class="form-group message">
+                <label for="message">Message<span class="required">*</span></label>
+                <textarea id="message" class="form-control" rows="6" placeholder="Entrez votre message ici ..."></textarea>
+              </div><!--//form-group-->
+              <button type="submit" class="btn btn-theme">Envoyer le message</button>
+            </form>
+          </article><!--//contact-form-->
+          <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+
+            <section class="widget has-divider">
+              <h3 class="title">Adresse postale</h3>
+
+              <p class="adr">
+                                    <span class="adr-group">
+                                        <span class="street-address">Universite du sahel</span><br>
+                                    <span class="region">Hamdalaye A.C.I 2000</span><br>
+                                    <span class="postal-code">Rue 365 Porte 71</span><br>
+                                    <span class="country-name">ML</span>
+                                    </span>
+              </p>
+            </section><!--//widget-->
+
+            <section class="widget">
+              <h3 class="title">Toutes les demandes de renseignements</h3>
+
+              <p class="tel"><i class="fa fa-phone"></i>Tel: (00223) 20 22 06 45</p>
+
+              <p class="email"><i class="fa fa-envelope"></i>Email: <a href="#">universitesahel@gmail.com</a></p>
+            </section>
+          </aside><!--//page-sidebar-->
+        </div><!--//page-row-->
+        <div class="page-row">
+          <article class="map-section">
+            <h3 class="title">Comment nous trouver</h3>
+
+            <div id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15573.260855849792!2d-8.04424527694975!3d12.627314396097367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe51cc65536d03c1%3A0xe6a4b55e719e9f0a!2sPlace+de+la+CAN%2C+Bamako%2C+Mali!5e0!3m2!1sfr!2sfr!4v1451557544254" frameborder="0" style="width:100%; height: 95%" allowfullscreen></iframe>
+            </div><!--//map-->
+          </article><!--//map-->
+        </div><!--//page-row-->
+      </div><!--//page-content-->
+    </div><!--//page-wrapper-->
+
+<% else %>
+
+    <div class="page-wrapper">
+      <header class="page-heading clearfix">
+        <h1 class="heading-title pull-right">اتصال</h1>
+
+        <div class="breadcrumbs pull-left">
+          <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-label">You are here:</li>
+            <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+            <li class="current">اتصال</li>
+          </ul>
+        </div><!--//breadcrumbs-->
+      </header>
+      <div class="page-content">
+        <div class="row">
+          <article class="contact-form col-md-8 col-md-offset-1 col-sm-7 col-sm-offset-1 pull-right  page-row">
+            <h3 class="title">الحصول على اتصال</h3>
+
+
+            <form>
+              <div class="form-group name">
+                <label for="name">Name</label>
+                <input id="name" type="text" class="form-control" placeholder="أدخل أسمك">
+              </div><!--//form-group-->
+              <div class="form-group email">
+                <label for="email">Email<span class="required">*</span></label>
+                <input id="email" type="email" class="form-control" placeholder="ادخل بريدك الإلكتروني">
+              </div><!--//form-group-->
+              <div class="form-group phone">
+                <label for="phone">Phone</label>
+                <input id="phone" type="tel" class="form-control" placeholder="إدخال رقم الاتصال الخاصة بك">
+              </div><!--//form-group-->
+              <div class="form-group message">
+                <label for="message">Message<span class="required">*</span></label>
+                <textarea id="message" class="form-control" rows="6" placeholder="أدخل رسالتك هنا ..."></textarea>
+              </div><!--//form-group-->
+              <button type="submit" class="btn btn-theme">أرسل رسالة</button>
+            </form>
+          </article><!--//contact-form-->
+          <aside class="page-sidebar  col-md-3  col-sm-4  pull-left">
+
+            <section class="widget has-divider">
+              <h3 class="title">العنوان البريدي</h3>
+
+              <p class="adr">
+                                    <span class="adr-group">
+                                        <span class="street-address">Universite du sahel</span><br>
+                                    <span class="region">Hamdalaye A.C.I 2000</span><br>
+                                    <span class="postal-code">Rue 365 Porte 71</span><br>
+                                    <span class="country-name">ML</span>
+                                    </span>
+              </p>
+            </section><!--//widget-->
+
+            <section class="widget">
+              <h3 class="title">جميع الاستفسارات</h3>
+
+              <p class="tel"><i class="fa fa-phone"></i>Tel: (00223) 20 22 06 45</p>
+
+              <p class="email"><i class="fa fa-envelope"></i>Email: <a href="#">universitesahel@gmail.com</a></p>
+            </section>
+          </aside><!--//page-sidebar-->
+        </div><!--//page-row-->
+        <div class="page-row">
+          <article class="map-section">
+            <h3 class="title pull-right">كيف تجدنا</h3>
+
+            <div id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15573.260855849792!2d-8.04424527694975!3d12.627314396097367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe51cc65536d03c1%3A0xe6a4b55e719e9f0a!2sPlace+de+la+CAN%2C+Bamako%2C+Mali!5e0!3m2!1sfr!2sfr!4v1451557544254" frameborder="0" style="width:100%; height: 95%" allowfullscreen></iframe>
+            </div><!--//map-->
+          </article><!--//map-->
+        </div><!--//page-row-->
+      </div><!--//page-content-->
+    </div><!--//page-wrapper-->
+
+
+<% end %>

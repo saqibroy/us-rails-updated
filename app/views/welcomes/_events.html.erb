@@ -1,0 +1,37 @@
+<% if @l == :fr %>
+<section class="events">
+  <h1 class="section-heading text-highlight"><span class="line">Événements</span></h1>
+  <div class="section-content">
+    <div class="event-item">
+      <p class="date-label">
+        <span class="month">FEB</span>
+        <span class="date-number">18</span>
+      </p>
+      <div class="details">
+        <h2 class="title">Open Day</h2>
+        <p class="time"><i class="fa fa-clock-o"></i>10:00am - 18:00pm</p>
+        <p class="location"><i class="fa fa-map-marker"></i>East Campus</p>
+      </div><!--//details-->
+    </div><!--event-item-->
+    <a class="read-more" href="#">Tous les événements<i class="fa fa-chevron-right"></i></a>
+  </div><!--//section-content-->
+</section><!--//events-->
+<% else %>
+<section class="events">
+  <h1 class="section-heading text-highlight"><span class="line">أحداث</span></h1>
+  <div class="section-content">
+    <div class="event-item">
+      <p class="date-label">
+        <span class="month">FEB</span>
+        <span class="date-number">18</span>
+      </p>
+      <div class="details">
+        <h2 class="title">Open Day</h2>
+        <p class="time"><i class="fa fa-clock-o"></i>10:00am - 18:00pm</p>
+        <p class="location"><i class="fa fa-map-marker"></i>East Campus</p>
+      </div><!--//details-->
+    </div><!--event-item-->
+    <a class="read-more" href="#"> <i class="fa fa-chevron-right"></i> كل الأحداث</a>
+  </div><!--//section-content-->
+</section><!--//events-->
+<% end %>

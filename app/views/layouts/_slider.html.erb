@@ -1,0 +1,15 @@
+<div id="promo-slider" class="slider flexslider">
+  <% @images.each do |image| %>
+  <ul class="slides">
+    <li>
+      <%= image_tag(image.image.url(:slider), size: "1140x350") %>
+      <p class="flex-caption">
+        <span class="main" ><%= image.image_title %></span>
+        <br />
+        <span class="secondary clearfix" ><%= image.description %></span>
+      </p>
+    </li>
+
+  </ul><!--//slides-->
+  <% end %>
+</div><!--//flexslider-->
