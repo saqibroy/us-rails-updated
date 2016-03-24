@@ -69,13 +69,7 @@ class AdminController < ApplicationController
   end
   def post_create
   	@post = current_user.posts.build(post_params)
-  	if current_user.user_type == "manager"
-  		@post.published= false
-  	else
-  		@post.published= true
-  		@post.published_at= Time.now
-  		
-  	end
+  	
     respond_to do |format|
       if @post.save
         format.html { redirect_to admin_posts_path, notice: 'Post was successfully created.' }
@@ -92,6 +86,13 @@ class AdminController < ApplicationController
   def post_update
   	respond_to do |format|
       if @post.update(post_params)
+        if @post.published?
+          @post.published_at= Time.now
+          @post.save
+        else
+          @post.published_at= nil
+          @post.save
+        end
         format.html { redirect_to admin_posts_path, notice: 'post was successfully updated.' }
         format.json { render :user_data, status: :ok, location: @post }
       else
@@ -116,7 +117,7 @@ class AdminController < ApplicationController
       @post= Post.find(params[:id])
     end
     def post_params
-     params.require(:post).permit(:title,:body)
+     params.require(:post).permit(:title,:body,:published,:image)
     end
     def check_user
       if current_user.present?

@@ -79,6 +79,11 @@
               </ul>
             </li>
             <li class="nav-item"><%= link_to "Contact", welcomes_contact_path %></li>
+            <%if current_user.present? %>
+            
+            <% else %>
+            <li class="nav-item"><%= link_to "Login", new_user_session_path %></li>
+            <%end%>
           </ul><!--//nav-->
         </div><!--//navabr-collapse-->
       </div><!--//container-->
