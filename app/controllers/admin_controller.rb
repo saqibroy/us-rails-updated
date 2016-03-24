@@ -119,15 +119,19 @@ class AdminController < ApplicationController
      params.require(:post).permit(:title,:body)
     end
     def check_user
-    	if current_user.user_type == "superAdmin" || current_user.user_type == "admin" || current_user.user_type == "manager"
+      if current_user.present?
+    	if current_user.user_type == "superAdmin" || current_user.user_type == "admin" || current_user.user_type == "manager" 
     		else
     			redirect_to root_path, notice: "Access Denied!"
     	end
     end
+    end
     def check_user_super
+      if current_user.present?
       if current_user.user_type == "superAdmin"
         else
           redirect_to root_path, notice: "Access Denied!"
         end
+      end
     end
 end

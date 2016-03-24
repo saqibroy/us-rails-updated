@@ -37651,3 +37651,491 @@ ActionController::RoutingError (No route matches [GET] "/assets/img/logo.png"):
   Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
   Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (50.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-24 11:03:51 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (38.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomesController#home as HTML
+  [1m[35mImage Load (16.4ms)[0m  SELECT "images".* FROM "images"
+  Rendered layouts/_slider.html.erb (20.7ms)
+  [1m[36mPost Load (21.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mPost::Translation Load (54.7ms)[0m  SELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1  [["post_id", 4]]
+  [1m[36mPost::Translation Load (0.7ms)[0m  [1mSELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[35mPost::Translation Load (0.6ms)[0m  SELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1  [["post_id", 6]]
+  [1m[36mPost::Translation Load (0.6ms)[0m  [1mSELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1[0m  [["post_id", 8]]
+  [1m[35mPost::Translation Load (0.5ms)[0m  SELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1  [["post_id", 9]]
+  [1m[36mPost::Translation Load (0.9ms)[0m  [1mSELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1[0m  [["post_id", 11]]
+  [1m[35mPost::Translation Load (0.7ms)[0m  SELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1  [["post_id", 12]]
+  [1m[36mPost::Translation Load (0.3ms)[0m  [1mSELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1[0m  [["post_id", 13]]
+  [1m[35mPost::Translation Load (0.4ms)[0m  SELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1  [["post_id", 14]]
+  [1m[36mPost::Translation Load (0.6ms)[0m  [1mSELECT "post_translations".* FROM "post_translations" WHERE "post_translations"."post_id" = $1[0m  [["post_id", 15]]
+  Rendered posts/_latest_news.html.erb (1804.7ms)
+  Rendered welcomes/_events.html.erb (0.7ms)
+  Rendered welcomes/_cours.html.erb (1.4ms)
+  Rendered welcomes/_videos.html.erb (1.4ms)
+  Rendered welcomes/_links.html.erb (1.2ms)
+  Rendered welcomes/_testimonials.html.erb (4.0ms)
+  Rendered layouts/_logo_awards.html.erb (10.1ms)
+  Rendered welcomes/home.html.erb within layouts/application (1920.9ms)
+  Rendered layouts/_header.html.erb (754.7ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 3440ms (Views: 3093.1ms | ActiveRecord: 218.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-03-24 11:04:00 +0500
+Processing by AdminController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `user_type' for nil:NilClass):
+  app/controllers/admin_controller.rb:122:in `check_user'
+
+
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.7ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.6ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (50.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-03-24 11:04:43 +0500
+
+SyntaxError (/home/roy/rails/us-rails-updated/app/controllers/admin_controller.rb:122: syntax error, unexpected modifier_if, expecting keyword_then or ';' or '\n'
+..._user.user_type == "manager" if current_user
+...                               ^
+/home/roy/rails/us-rails-updated/app/controllers/admin_controller.rb:133: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/admin_controller.rb:122: syntax error, unexpected modifier_if, expecting keyword_then or ';' or '\n'
+  app/controllers/admin_controller.rb:133: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.3ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.0ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/roy/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-03-24 11:07:36 +0500
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 36ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2016-03-24 11:07:36 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (12.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (68.2ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 268ms (Views: 246.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/froala_editor.min.self-e5b080cc3967a2af74585aa4a0fe94c05dd98e418b3c55311b85d34752244967.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/froala_style.min.self-42681628d760e9d58d7c9e1c4adc98109d64718117d272f942aea0ee17bd22d0.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/char_counter.min.self-eb9cf28c284d3709a1b21ef70e15a1ebb09dd6cc309d2b952d8882d84b3afb17.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/code_view.min.self-2f3b6e69340aa022402cb2eb4de15110211a72e6eed6aceb8213a5f42aaad1b0.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/colors.min.self-0e8d1010bee132aed2f5f72f2010ce78862d9139b3c0e17ba31d3c1830d40401.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/emoticons.min.self-0035d195ffc8d53547066280a662ccac369939c9df6483532b55ed84d6bc3ad1.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/file.min.self-ca1f64c3222cab7cb4330095fff475feec600948d2f577c759425be99daf1765.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/fullscreen.min.self-f606a6224fad92fe0ba136cd60b846d3eab441e0861da3179c207e3253cd6653.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/image_manager.min.self-b50c192b633ded4a509e382de22ce82d5f662a02d964ae6542cc08e9bc9f9cfd.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/image.min.self-d4c262d94ae043e9369ca3dba3751016d66b6eb81d0cecbca33fc58fa6e2be4c.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/line_breaker.min.self-fdf139f00add2b83bf93d60c4dddccaf39d067f12417747490d3ca8d8eafb705.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/table.min.self-569228e4bcbbdc0863fca625797b878301b017f8307e3951452bf35535278ef7.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/video.min.self-56f97920b181f721e0ffb67498bfbeeda53c9251f6832b09f95944fafd91ff0c.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/application.self-d7fe9486f5c8f2e42a055c37fdffaf0dee5005a72104f4854d136a0a8e52faa5.css?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/bootstrap-hover-dropdown.min.self-5f08240d71c769d5cf7ee7a0d307f23593bb47d75c3490737951f007a0382a72.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/back-to-top.self-db00e68b278880cdf937f1e4827a6266164dbf86bf5b9430c31872c7a9a76200.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/jquery.placeholder.self-8bbc8c90722d305d3dced4b77fcd9612dc29de54e5fab140a8c2762c9c25d20e.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/jquery.prettyPhoto.self-6aa4a750d3d56d3e01be3f11ba7ca78d76c80937f72f96d1557338f31b942a7a.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/jquery.flexslider-min.self-59aebb936d6132e87fb4f92040d6dd3381d4d6b729c0840c838bcea9fd4fc6a3.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/main.self-a27c6e58d2080f004fccb0e0e1299466362fd15aa89d765485e877ac5a0d5cfb.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/jflickrfeed.min.self-fdc645c76d4b7916741693c24456dcc8cdf4c7b1a7a8df835e8e0ac11f42531e.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/froala_editor.min.self-7490d4c7a37a57f7683aafe5d1cabb8fed78b2b07db35c85ab75c419c4990254.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/align.min.self-5521656d4b76bec3f0ef728cb75eed7f9f505391a4b73737461083c8f6a9edfb.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/char_counter.min.self-5874f76b6c76937cf3fc6095e3f21c405625e1600c37eb577c7b18e8e47117a2.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/code_beautifier.min.self-c9e44b428b535331ee0a3577957d448e5ff68257a5d8ff4d4df25947ad3f1ff3.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/code_view.min.self-acd170a19af4777dec860010acb4020caa042c93e3fe548a2b56b238924689c1.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/colors.min.self-1d5adceb96a0fa2a0871d290ac34d185400655e1caed65f53ee3b555dec383c3.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/emoticons.min.self-c6cfca165ba37872be84da41cafeab3e6ee78dd6a69e9b5f56f947f7d396bcac.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/file.min.self-be982a5d31d8aebd7f7e5cba19b38eba7ebf08d41b9acb7ffdc19d2634e616b8.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/entities.min.self-6a29b183f3010e39ed6d2a43a037d77720b1fc287f929ae3311e90f28c46b301.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/font_family.min.self-00f541a63db99a392dc1d3e7dc36079e6653b971a8558961a78e8e7c1b4b0897.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/font_size.min.self-81d08199625d94dbe234063c391adabfac3194645aaeb0acf7a4e078366e298a.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/fullscreen.min.self-111a70a9d5de734ec53ed5cb242ddd124ac63baa91bdb84c9163a967531ab130.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/image.min.self-bcb508f36333b1e6c67a1f57390f0339e7132e8ab561ca492c878f401b8e91e4.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/image_manager.min.self-7646d63ee31bbef8a56f297751623b120acb36dc8f49a44185711054526fc5b1.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/inline_style.min.self-8eeb15c55ca90dc5e40fa2cd520e3ed53b7fd6987dd2685c32eb137b447dfc4d.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/line_breaker.min.self-b1a952be5ecf723aeac62ed6d7658c82545c101575e13c4fd64dccbf4c1039d0.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/link.min.self-bb9af214c99dc3c33a25a735c2ff89028b4394017e30453d313db3bc089988ab.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:37 +0500
+
+
+Started GET "/assets/plugins/lists.min.self-f333e403121e5a7cae004a9f4ec6a955964a8980ad754d05e8240aaa49e741a4.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/plugins/paragraph_format.min.self-3b485b0b19a67acfff64e909ce2f7ba4f4cd521560503d83ed47fc48a1cafeca.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/plugins/paragraph_style.min.self-1cceaebdb93ce75cc9085438643a98f76686b24eb44234122d7f4748c1587fcf.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/plugins/quote.min.self-c16598b16f43d48f4d316a63d5365be542e672d9a0ebce6f5cc910a805c71d2c.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/plugins/save.min.self-10ea2e32914736bbb6b5d6c79623ff17b79b3a957231fd2b885298a1079a8c3b.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/plugins/table.min.self-4fbfd93bced981d8fab668925f340a7814b8109fdf723f385fa1b5ac8e3719ca.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/plugins/url.min.self-744845a9f7cdbfdef281ec6c376f9acff5b3dda99843be2c98d901c459e9787a.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/plugins/video.min.self-eb3f91d5a9c61a35a46e31acf4a95b12360a9a4c1f03c7b2e8ae8383381677a8.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/application.self-34e68fc9638253b332ac8e223f5f3a1d18d522ef5e3909f9d07c2ab2f5e0d6c7.js?body=1" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/logo-2e8e296a1ff88b53004665b2aa3531e2242b2971e27db9ab5e89f4fd31175cc2.png" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/assets/fontawesome-webfont-ff82aeed6b9bb6701696c84d1b223d2e682eb78c89117a438ce6cfea8c498995.woff2?v=4.5.0" for 127.0.0.1 at 2016-03-24 11:07:38 +0500
+
+
+Started GET "/users/login" for 127.0.0.1 at 2016-03-24 11:08:05 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 248ms (Views: 210.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/froala_editor.min.self-e5b080cc3967a2af74585aa4a0fe94c05dd98e418b3c55311b85d34752244967.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/froala_style.min.self-42681628d760e9d58d7c9e1c4adc98109d64718117d272f942aea0ee17bd22d0.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/char_counter.min.self-eb9cf28c284d3709a1b21ef70e15a1ebb09dd6cc309d2b952d8882d84b3afb17.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/colors.min.self-0e8d1010bee132aed2f5f72f2010ce78862d9139b3c0e17ba31d3c1830d40401.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/code_view.min.self-2f3b6e69340aa022402cb2eb4de15110211a72e6eed6aceb8213a5f42aaad1b0.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/emoticons.min.self-0035d195ffc8d53547066280a662ccac369939c9df6483532b55ed84d6bc3ad1.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/file.min.self-ca1f64c3222cab7cb4330095fff475feec600948d2f577c759425be99daf1765.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/fullscreen.min.self-f606a6224fad92fe0ba136cd60b846d3eab441e0861da3179c207e3253cd6653.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/image_manager.min.self-b50c192b633ded4a509e382de22ce82d5f662a02d964ae6542cc08e9bc9f9cfd.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/image.min.self-d4c262d94ae043e9369ca3dba3751016d66b6eb81d0cecbca33fc58fa6e2be4c.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/table.min.self-569228e4bcbbdc0863fca625797b878301b017f8307e3951452bf35535278ef7.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/line_breaker.min.self-fdf139f00add2b83bf93d60c4dddccaf39d067f12417747490d3ca8d8eafb705.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/plugins/video.min.self-56f97920b181f721e0ffb67498bfbeeda53c9251f6832b09f95944fafd91ff0c.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/application.self-d7fe9486f5c8f2e42a055c37fdffaf0dee5005a72104f4854d136a0a8e52faa5.css?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/bootstrap-hover-dropdown.min.self-5f08240d71c769d5cf7ee7a0d307f23593bb47d75c3490737951f007a0382a72.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/back-to-top.self-db00e68b278880cdf937f1e4827a6266164dbf86bf5b9430c31872c7a9a76200.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:06 +0500
+
+
+Started GET "/assets/jquery.placeholder.self-8bbc8c90722d305d3dced4b77fcd9612dc29de54e5fab140a8c2762c9c25d20e.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/jquery.prettyPhoto.self-6aa4a750d3d56d3e01be3f11ba7ca78d76c80937f72f96d1557338f31b942a7a.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/jquery.flexslider-min.self-59aebb936d6132e87fb4f92040d6dd3381d4d6b729c0840c838bcea9fd4fc6a3.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/jflickrfeed.min.self-fdc645c76d4b7916741693c24456dcc8cdf4c7b1a7a8df835e8e0ac11f42531e.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/main.self-a27c6e58d2080f004fccb0e0e1299466362fd15aa89d765485e877ac5a0d5cfb.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/froala_editor.min.self-7490d4c7a37a57f7683aafe5d1cabb8fed78b2b07db35c85ab75c419c4990254.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/align.min.self-5521656d4b76bec3f0ef728cb75eed7f9f505391a4b73737461083c8f6a9edfb.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/char_counter.min.self-5874f76b6c76937cf3fc6095e3f21c405625e1600c37eb577c7b18e8e47117a2.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/code_beautifier.min.self-c9e44b428b535331ee0a3577957d448e5ff68257a5d8ff4d4df25947ad3f1ff3.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/code_view.min.self-acd170a19af4777dec860010acb4020caa042c93e3fe548a2b56b238924689c1.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/colors.min.self-1d5adceb96a0fa2a0871d290ac34d185400655e1caed65f53ee3b555dec383c3.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/emoticons.min.self-c6cfca165ba37872be84da41cafeab3e6ee78dd6a69e9b5f56f947f7d396bcac.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/entities.min.self-6a29b183f3010e39ed6d2a43a037d77720b1fc287f929ae3311e90f28c46b301.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/file.min.self-be982a5d31d8aebd7f7e5cba19b38eba7ebf08d41b9acb7ffdc19d2634e616b8.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/font_family.min.self-00f541a63db99a392dc1d3e7dc36079e6653b971a8558961a78e8e7c1b4b0897.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/font_size.min.self-81d08199625d94dbe234063c391adabfac3194645aaeb0acf7a4e078366e298a.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/fullscreen.min.self-111a70a9d5de734ec53ed5cb242ddd124ac63baa91bdb84c9163a967531ab130.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/image.min.self-bcb508f36333b1e6c67a1f57390f0339e7132e8ab561ca492c878f401b8e91e4.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/image_manager.min.self-7646d63ee31bbef8a56f297751623b120acb36dc8f49a44185711054526fc5b1.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/inline_style.min.self-8eeb15c55ca90dc5e40fa2cd520e3ed53b7fd6987dd2685c32eb137b447dfc4d.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/line_breaker.min.self-b1a952be5ecf723aeac62ed6d7658c82545c101575e13c4fd64dccbf4c1039d0.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/link.min.self-bb9af214c99dc3c33a25a735c2ff89028b4394017e30453d313db3bc089988ab.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/lists.min.self-f333e403121e5a7cae004a9f4ec6a955964a8980ad754d05e8240aaa49e741a4.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/paragraph_format.min.self-3b485b0b19a67acfff64e909ce2f7ba4f4cd521560503d83ed47fc48a1cafeca.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/paragraph_style.min.self-1cceaebdb93ce75cc9085438643a98f76686b24eb44234122d7f4748c1587fcf.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/quote.min.self-c16598b16f43d48f4d316a63d5365be542e672d9a0ebce6f5cc910a805c71d2c.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/save.min.self-10ea2e32914736bbb6b5d6c79623ff17b79b3a957231fd2b885298a1079a8c3b.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/table.min.self-4fbfd93bced981d8fab668925f340a7814b8109fdf723f385fa1b5ac8e3719ca.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/url.min.self-744845a9f7cdbfdef281ec6c376f9acff5b3dda99843be2c98d901c459e9787a.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/plugins/video.min.self-eb3f91d5a9c61a35a46e31acf4a95b12360a9a4c1f03c7b2e8ae8383381677a8.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/application.self-34e68fc9638253b332ac8e223f5f3a1d18d522ef5e3909f9d07c2ab2f5e0d6c7.js?body=1" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/fontawesome-webfont-ff82aeed6b9bb6701696c84d1b223d2e682eb78c89117a438ce6cfea8c498995.woff2?v=4.5.0" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
+
+
+Started GET "/assets/logo-2e8e296a1ff88b53004665b2aa3531e2242b2971e27db9ab5e89f4fd31175cc2.png" for 127.0.0.1 at 2016-03-24 11:08:07 +0500
