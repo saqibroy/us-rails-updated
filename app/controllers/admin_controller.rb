@@ -59,9 +59,18 @@ class AdminController < ApplicationController
   end
   def posts
   	if current_user.user_type == "superAdmin"
-  		@posts= Post.all
+      if @l == :fr
+        @posts= Post.all.where(arabic: false)
+      else
+        @posts= Post.all.where(arabic: true)
+      end
+  		
   	else
-  	    @posts= current_user.posts.all
+      if @l == :fr
+  	    @posts= current_user.posts.all.where(arabic: false)
+      else
+        @posts= current_user.posts.all.where(arabic: true)
+      end
   	end
   end
   def post_new
@@ -69,6 +78,11 @@ class AdminController < ApplicationController
   end
   def post_create
   	@post = current_user.posts.build(post_params)
+     if @l == :fr
+      @post.arabic= false
+    else
+      @post.arabic= true
+     end 
   	
     respond_to do |format|
       if @post.save
