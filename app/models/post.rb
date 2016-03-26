@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 
   translates :title, :body
   has_attached_file :image,
-                    styles: { thumb: ["64x64#", :jpg],
+                    styles: { thumb: ["100x100#", :jpg],
                               original: ['1130x350>', :jpg] },
                     convert_options: { thumb: "-quality 75 -strip",
                                        original: "-quality 100 -strip" }

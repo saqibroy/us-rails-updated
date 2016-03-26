@@ -80,9 +80,9 @@
             </li>
             <li class="nav-item"><%= link_to "Contact", welcomes_contact_path %></li>
             <%if current_user.present? %>
-            
+            <li class="nav-item"><%= link_to "se déconnecter", destroy_user_session_path, method: :delete%></li>
             <% else %>
-            <li class="nav-item"><%= link_to "Login", new_user_session_path %></li>
+            <li class="nav-item"><%= link_to "S'identifier", new_user_session_path %></li>
             <%end%>
           </ul><!--//nav-->
         </div><!--//navabr-collapse-->
@@ -172,6 +172,11 @@
               </ul>
             </li>
             <li class="active nav-item"><%= link_to "الرئسيــة", root_path, class: "" %></li>
+            <%if current_user.present? %>
+            <li class="nav-item"><%= link_to "خروج", destroy_user_session_path, method: :delete%></li>
+            <% else %>
+            <li class="nav-item"><%= link_to "تسجيل الدخول", new_user_session_path %></li>
+            <%end%>
 
 
 

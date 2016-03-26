@@ -1,60 +1,78 @@
 <% if @l == :fr %>
     <section class="news">
-      <h1 class="section-heading text-highlight"><span class="line">Dernières nouvelles</span></h1>
-
-      <div class="carousel-controls">
-        <a class="prev" href="#news-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
-        <a class="next" href="#news-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
-      </div><!--//carousel-controls-->
-      <div class="section-content clearfix">
-        <div id="news-carousel" class="news-carousel carousel slide">
-          <div class="carousel-inner">
-
-            <div class="item active">
-              <div class="col-md-4 news-item">
-                <% @posts.each do |post| %>
-                    <h2 class="title"><a href="<%= post_path post %>"><%= post.title %></a></h2>
-                    <%= image_tag("news/news-thumb-1.jpg", class: "thumb") %>
-                    <p>
-                      <% post.body %>
-                    </p>
-                    <a class="read-more" href="<%= post_path post %>">Lire plus<i class="fa fa-chevron-right"></i></a>
-                <% end %>
-              </div><!--//news-item-->
-            </div><!--//item-->
-
-          </div><!--//carousel-inner-->
-        </div><!--//news-carousel-->
-      </div><!--//section-content-->
-    </section><!--//news-->
+                <h1 class="section-heading text-highlight"><span class="line">Dernières nouvelles</span></h1>     
+                <div class="carousel-controls">
+                    <a class="prev" href="#news-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+                    <a class="next" href="#news-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+                </div><!--//carousel-controls--> 
+                <div class="section-content clearfix">
+                    <div id="news-carousel" class="news-carousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                            <% @new_posts.each do |post| %> 
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.html"><%= post.title %></a></h2>
+                                    <%= image_tag post.image.url(:thumb), class: "thumb" %>
+                                   
+                                    <p><%= raw post.body %></p>
+                                    <a class="read-more" href="news-single.html">
+Lire la suite<i class="fa fa-chevron-right"></i></a>                
+                                </div><!--//news-item-->
+                                <% end %>
+                                <!--//news-item-->
+                            </div><!--//item-->
+                            <div class="item"> 
+                            <% @ran_posts.each do |post| %> 
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.html"><%= post.title %></a></h2>
+                                    <%= image_tag post.image.url(:thumb), class: "thumb" %>
+                                    <p><%= raw post.body %></p>
+                                    <a class="read-more" href="news-single.html">
+Lire la suite<i class="fa fa-chevron-right"></i></a>                
+                                </div><!--//news-item-->
+                                <% end %>
+                                
+                            </div><!--//item-->
+                        </div><!--//carousel-inner-->
+                    </div><!--//news-carousel-->  
+                </div><!--//section-content-->     
+            </section><!--//news-->
 <% else %>
     <section class="news">
-      <h1 class="section-heading text-highlight"><span class="line">آخر الأخبار</span></h1>
-
-      <div class="carousel-controls">
-        <a class="prev" href="#news-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
-        <a class="next" href="#news-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
-      </div><!--//carousel-controls-->
-      <div class="section-content clearfix">
-        <div id="news-carousel" class="news-carousel carousel slide">
-          <div class="carousel-inner">
-
-            <div class="item active">
-              <div class="col-md-4 news-item">
-                <% @posts.each do |post| %>
-                    <h2 class="title"><a href="<%= post_path post %>"><%= post.title %></a></h2>
-                    <%= image_tag("news/news-thumb-1.jpg", class: "thumb") %>
-                    <p>
-                      <% post.body %>
-                    </p>
-                    <a class="read-more" href="<%= post_path post %>">اقرأ المزيد<i class="fa fa-chevron-right"></i></a>
-                <% end %>
-              </div><!--//news-item-->
-            </div><!--//item-->
-
-          </div><!--//carousel-inner-->
-        </div><!--//news-carousel-->
-      </div><!--//section-content-->
-    </section><!--//news-->
+                <h1 class="section-heading text-highlight"><span class="line">أحدث الأخبار</span></h1>     
+                <div class="carousel-controls">
+                    <a class="prev" href="#news-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+                    <a class="next" href="#news-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+                </div><!--//carousel-controls--> 
+                <div class="section-content clearfix">
+                    <div id="news-carousel" class="news-carousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                            <% @new_posts.each do |post| %> 
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.html"><%= post.title %></a></h2>
+                                    <%= image_tag post.image.url(:thumb), class: "thumb" %>
+                                   
+                                    <p><%= raw post.body %></p>
+                                    <a class="read-more" href="news-single.html">اقرأ أكثر<i class="fa fa-chevron-right"></i></a>                
+                                </div><!--//news-item-->
+                                <% end %>
+                                <!--//news-item-->
+                            </div><!--//item-->
+                            <div class="item"> 
+                            <% @ran_posts.each do |post| %> 
+                                <div class="col-md-4 news-item">
+                                    <h2 class="title"><a href="news-single.html"><%= post.title %></a></h2>
+                                    <%= image_tag post.image.url(:thumb), class: "thumb" %>
+                                    <p><%= raw post.body %></p>
+                                    <a class="read-more" href="news-single.html">اقرأ أكثر<i class="fa fa-chevron-right"></i></a>                
+                                </div><!--//news-item-->
+                                <% end %>
+                                
+                            </div><!--//item-->
+                        </div><!--//carousel-inner-->
+                    </div><!--//news-carousel-->  
+                </div><!--//section-content-->     
+            </section>
 
 <% end %>

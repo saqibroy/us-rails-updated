@@ -6,12 +6,20 @@ class AdminController < ApplicationController
 	before_action :check_user_super, only: [:user_data, :user_new, :user_create, :user_edit, :user_update, :user_destroy]
  layout false
   def index
+    @users_count= User.all.count
   	if current_user.user_type == "superAdmin"
-  		@users_count= User.all.count
-  		@posts_count= Post.all.count
+      if @l == :fr
+  		@posts_count= Post.all.where(arabic: false).count
+    else
+      @posts_count= Post.all.where(arabic: true).count
+    end
   		else
   		@users_count= nil
-        @posts_count= current_user.posts.all.count
+      if @l == :fr
+        @posts_count= current_user.posts.all.where(arabic: false).count
+      else
+        @posts_count= current_user.posts.all.where(arabic: true).count
+      end
   	end
   end
   def user_data
