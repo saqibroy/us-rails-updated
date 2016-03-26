@@ -6,6 +6,7 @@
   <script>
   $('#edit').froalaEditor({key: 'ZliJ2A-21mnE4hdplopgwxE5ida=='});
 </script>
+<% if @l == :fr %>
 <% flash.each do |name,msg|%>
                 <%= content_tag :div, msg, class: "alert alert-danger flash-popup", role: "alert" %>
                 <% end %>
@@ -24,7 +25,14 @@
                     </li>
                     <!-- END TOGGLE NAVIGATION -->
                     <!-- SEARCH -->
-                      
+                      <div class="info col-md-2 col-sm-2 col-md-offset-8">
+          <ul class="menu-top navbar-right hidden-xs">
+            <li class="divider"><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+            <li ><%= link_to t('menu.languages.ar'), change_locale_path(:ar) %></li>
+          </ul><!--//menu-top-->
+          <br/>
+
+        </div>
                     <!-- END SEARCH -->
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
@@ -43,8 +51,8 @@
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                    <li><%= link_to "Home", admin_path %></li>                    
-                    <li class="active">Posts</li>
+                    <li><%= link_to "domicile", admin_path %></li>                    
+                    <li class="active">Des postes</li>
                 </ul>
                 <!-- END BREADCRUMB -->  
                 <div class="page-content-wrap">
@@ -55,7 +63,7 @@
                             <%= simple_form_for(@post,:url => admin_post_update_path(id: @post.id), :method => :put) do |f| %>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>EDIT POST</strong></h3>
+                                    <h3 class="panel-title"><strong>Modifier le message</strong></h3>
                                     <ul class="panel-controls">
                                         <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
                                     </ul>
@@ -65,7 +73,7 @@
                                      
                                     
                                      <div class="form-group col-md-offset-2">
-                                        <label class="col-md-2 col-xs-12 control-label ">TITLE</label>
+                                        <label class="col-md-2 col-xs-12 control-label ">TITRE</label>
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
@@ -100,7 +108,7 @@
                                     </div>
                                     <br><br>
                                     <div class="form-group col-md-offset-2">
-                                        <label class="col-md-2 col-xs-12 control-label ">BODY</label>
+                                        <label class="col-md-2 col-xs-12 control-label ">CORPS</label>
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
                                                 
@@ -113,8 +121,8 @@
                                     
                                 </div>
                                 <div class="panel-footer">
-                                    <button class="btn btn-default">Clear Form</button>                                    
-                                    <button class="btn btn-primary pull-right">Submit</button>
+                                    <button class="btn btn-default">Forme claire</button>                                    
+                                    <button class="btn btn-primary pull-right">Soumettre</button>
                                 </div>
                             </div>
                             <% end %>
@@ -130,23 +138,142 @@
                
 
         <!-- MESSAGE BOX-->
-        <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
-            <div class="mb-container">
-                <div class="mb-middle">
-                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
-                    <div class="mb-content">
-                        <p>Are you sure you want to log out?</p>                    
-                        <p>Press No if you want to continue work. Press Yes to logout current user.</p>
-                    </div>
-                    <div class="mb-footer">
-                        <div class="pull-right">
-                            <%=link_to "Yes", destroy_user_session_path, method: :delete, class: "btn btn-success btn-lg" %>
-                            <button class="btn btn-default btn-lg mb-control-close">No</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <%= render 'logout' %>
+        <% else %>
+<% flash.each do |name,msg|%>
+                <%= content_tag :div, msg, class: "alert alert-danger flash-popup", role: "alert" %>
+                <% end %>
+        <div class="page-container">
+            
+            <!-- START PAGE SIDEBAR -->
+            <%= render 'layouts/navbar' %>
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+                
+                <!-- START X-NAVIGATION VERTICAL -->
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    <!-- TOGGLE NAVIGATION -->
+                    <li class="xn-icon-button">
+                        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                    </li>
+                    <!-- END TOGGLE NAVIGATION -->
+                    <!-- SEARCH -->
+                      <div class="info col-md-2 col-sm-2 col-md-offset-8">
+          <ul class="menu-top navbar-right hidden-xs">
+            <li class="divider"><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+            <li ><%= link_to t('menu.languages.ar'), change_locale_path(:ar) %></li>
+          </ul><!--//menu-top-->
+          <br/>
+
         </div>
+                    <!-- END SEARCH -->
+                    <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                                                
+                    </li> 
+                    <!-- END SIGN OUT -->
+                    <!-- MESSAGES -->
+                   
+                    <!-- END MESSAGES -->
+                    <!-- TASKS -->
+                    
+                    <!-- END TASKS -->
+                </ul>
+                <!-- END X-NAVIGATION VERTICAL -->                     
+
+                <!-- START BREADCRUMB -->
+                <ul class="breadcrumb">
+                    <li><%= link_to "الصفحة الرئيسية", admin_path %></li>                    
+                    <li class="active">المشاركات</li>
+                </ul>
+                <!-- END BREADCRUMB -->  
+                <div class="page-content-wrap">
+                 <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                            <%= simple_form_for(@post,:url => admin_post_update_path(id: @post.id), :method => :put) do |f| %>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>تعديل المنشور</strong></h3>
+                                    <ul class="panel-controls">
+                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                    </ul>
+                                </div>
+                               
+                                <div class="panel-body"> 
+                                     
+                                    
+                                     <div class="form-group col-md-offset-2">
+                                        <label class="col-md-2 col-xs-12 control-label ">عنوان</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <%= f.input :title,label: false, required: true,input_html: {class: "form-control"},wrapper: false%>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    <% if current_user.present? %>
+                                    <% if current_user.user_type == "manager" %>
+                                    <% else %>
+                                     <br><br>
+                                    <div class="form-group col-md-offset-2">
+                                        <label class="col-md-2 col-xs-12 control-label ">PUBLISHED</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                
+                                                <%= f.input :published,label: false, required: true,id: "wysiwyg", class: "form-control",wrapper: false%>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    <% end %>
+                                    <% end %>
+                                    <br><br>
+                                    <div class="form-group col-md-offset-2">
+                                        <label class="col-md-2 col-xs-12 control-label ">صورة</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                
+                                                <%= f.input :image,as: :file,label: false, required: true,id: "wysiwyg", class: "form-control",wrapper: false%>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div class="form-group col-md-offset-2">
+                                        <label class="col-md-2 col-xs-12 control-label ">الجسم</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                
+                                                <%= f.text_area :body,label: false, required: true,id: "wysiwyg", class: "form-control",wrapper: false%>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-default">نموذج واضح</button>                                    
+                                    <button class="btn btn-primary pull-right">عرض</button>
+                                </div>
+                            </div>
+                            <% end %>
+                            
+                        </div>
+                    </div>  
+                </div>                   
+             </div>
+             </div>
+
+                   
+                   
+               
+
+        <!-- MESSAGE BOX-->
+        <%= render 'logout' %>
+
+        <% end %>
         <%= javascript_include_tag 'admin' %>
         <script>
   $('#wysiwyg').froalaEditor({

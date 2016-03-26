@@ -1,0 +1,39 @@
+<% if @l == :fr %>
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                    <div class="mb-content">
+                        <p>Êtes-vous sûr de vouloir vous déconnecter?</p>                    
+                        <p>
+Appuyez sur Non si vous souhaitez continuer à travailler . Appuyez sur Oui pour déconnecter l'utilisateur actuel.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <%=link_to "Oui", destroy_user_session_path, method: :delete, class: "btn btn-success btn-lg" %>
+                            <button class="btn btn-default btn-lg mb-control-close">non</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<% else %>
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                    <div class="mb-content">
+                        <p>هل أنت متأكد أنك تريد تسجيل الخروج ؟</p>                    
+                        <p>اضغط لا إذا كنت ترغب في الاستمرار في العمل. اضغط نعم ل خروج المستخدم الحالي .</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <%=link_to "نعم فعلا", destroy_user_session_path, method: :delete, class: "btn btn-success btn-lg" %>
+                            <button class="btn btn-default btn-lg mb-control-close">لا</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<% end %>

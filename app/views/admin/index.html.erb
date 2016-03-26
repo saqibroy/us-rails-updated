@@ -1,8 +1,10 @@
  <!-- START PAGE CONTAINER -->
+
  <%= stylesheet_link_tag 'admin', media: 'all' %>
  <%= csrf_meta_tags %>
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <% if @l == :fr %>
   <% flash.each do |name,msg|%>
 				<%= content_tag :div, msg, class: "alert alert-danger flash-popup", role: "alert" %>
 				<% end %>
@@ -23,11 +25,21 @@
                     <!-- SEARCH -->
                       
                     <!-- END SEARCH -->
+                    <div class="info col-md-2 col-sm-2 col-md-offset-8">
+          <ul class="menu-top navbar-right hidden-xs">
+            <li class="divider"><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+            <li ><%= link_to t('menu.languages.ar'), change_locale_path(:ar) %></li>
+          </ul><!--//menu-top-->
+          <br/>
+
+        </div>
                     <!-- SIGN OUT -->
+
                     <li class="xn-icon-button pull-right">
                         <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
                                                 
                     </li> 
+
                     <!-- END SIGN OUT -->
                     <!-- MESSAGES -->
                    
@@ -40,8 +52,8 @@
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                    <li><%= link_to "Home", admin_path %></li>                    
-                    <li class="active">Dashboard</li>
+                    <li><%= link_to "domicile", admin_path %></li>                    
+                    <li class="active">Tableau de bord</li>
                 </ul>
                 <!-- END BREADCRUMB -->  
                 <div class="page-content-wrap">
@@ -59,7 +71,7 @@
                                 </div>                             
                                 <div class="widget-data">
                                     <div class="widget-int num-count"><%= @users_count %></div>
-                                    <div class="widget-title">Users</div>
+                                    <div class="widget-title">utilisateurs</div>
                                 </div>      
                                 <div class="widget-controls">                                
                                     <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
@@ -78,7 +90,7 @@
                                 </div>                             
                                 <div class="widget-data">
                                     <div class="widget-int num-count"><%= @posts_count  %></div>
-                                    <div class="widget-title">Posts</div>
+                                    <div class="widget-title">des postes</div>
                                 </div>      
                                 <div class="widget-controls">                                
                                     <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
@@ -102,21 +114,117 @@
                
 
         <!-- MESSAGE BOX-->
-        <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
-            <div class="mb-container">
-                <div class="mb-middle">
-                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
-                    <div class="mb-content">
-                        <p>Are you sure you want to log out?</p>                    
-                        <p>Press No if you want to continue work. Press Yes to logout current user.</p>
-                    </div>
-                    <div class="mb-footer">
-                        <div class="pull-right">
-                            <%=link_to "Yes", destroy_user_session_path, method: :delete, class: "btn btn-success btn-lg" %>
-                            <button class="btn btn-default btn-lg mb-control-close">No</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <%= render 'logout' %>
+        <% else %>
+        <% flash.each do |name,msg|%>
+                <%= content_tag :div, msg, class: "alert alert-danger flash-popup", role: "alert" %>
+                <% end %>
+        <div class="page-container">
+            
+            <!-- START PAGE SIDEBAR -->
+            <%= render 'layouts/navbar' %>
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+                
+                <!-- START X-NAVIGATION VERTICAL -->
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    <!-- TOGGLE NAVIGATION -->
+                    <li class="xn-icon-button">
+                        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                    </li>
+                    <!-- END TOGGLE NAVIGATION -->
+                    <!-- SEARCH -->
+                      
+                    <!-- END SEARCH -->
+                    <div class="info col-md-2 col-sm-2 col-md-offset-8">
+          <ul class="menu-top navbar-right hidden-xs">
+            <li class="divider"><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+            <li ><%= link_to t('menu.languages.ar'), change_locale_path(:ar) %></li>
+          </ul><!--//menu-top-->
+          <br/>
+
         </div>
+                    <!-- SIGN OUT -->
+
+                    <li class="xn-icon-button pull-right">
+                        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                                                
+                    </li> 
+
+                    <!-- END SIGN OUT -->
+                    <!-- MESSAGES -->
+                   
+                    <!-- END MESSAGES -->
+                    <!-- TASKS -->
+                    
+                    <!-- END TASKS -->
+                </ul>
+                <!-- END X-NAVIGATION VERTICAL -->                     
+
+                <!-- START BREADCRUMB -->
+                <ul class="breadcrumb">
+                    <li><%= link_to "الصفحة الرئيسية", admin_path %></li>                    
+                    <li class="active">لوحة القيادة</li>
+                </ul>
+                <!-- END BREADCRUMB -->  
+                <div class="page-content-wrap">
+                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                        <div class="row">
+                        <% if current_user.user_type == "superAdmin" %>
+                        <div class="col-md-4">
+                            
+                            <!-- START WIDGET MESSAGES -->
+                            <div class="widget widget-default widget-item-icon" onclick="location.href='<%= admin_user_data_path %>';">
+                                <div class="widget-item-left">
+                                    <span class="fa fa-user"></span>
+                                </div>                             
+                                <div class="widget-data">
+                                    <div class="widget-int num-count"><%= @users_count %></div>
+                                    <div class="widget-title">المستخدمي</div>
+                                </div>      
+                                <div class="widget-controls">                                
+                                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                </div>
+                            </div>                            
+                            <!-- END WIDGET MESSAGES -->
+                            
+                        </div>
+                        <% end %>
+                        <div class="col-md-4">
+                            
+                            <!-- START WIDGET MESSAGES -->
+                            <div class="widget widget-default widget-item-icon" onclick="location.href='<%= admin_posts_path %>';">
+                                <div class="widget-item-left">
+                                    <span class="fa fa-file"></span>
+                                </div>                             
+                                <div class="widget-data">
+                                    <div class="widget-int num-count"><%= @posts_count  %></div>
+                                    <div class="widget-title">المشاركات</div>
+                                </div>      
+                                <div class="widget-controls">                                
+                                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                </div>
+                            </div>                            
+                            <!-- END WIDGET MESSAGES -->
+                            
+                        </div>
+                        
+                            
+                        </div>
+                       </div>
+                    </div>
+                 </div>
+                </div>                   
+             </div>
+             </div>
+
+                   
+                   
+               
+
+        <!-- MESSAGE BOX-->
+        <%= render 'logout' %>
+        <% end %>
         <%= javascript_include_tag 'admin' %>
