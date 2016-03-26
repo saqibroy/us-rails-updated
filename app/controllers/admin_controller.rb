@@ -131,7 +131,7 @@ class AdminController < ApplicationController
       @post= Post.find(params[:id])
     end
     def post_params
-     params.require(:post).permit(:title,:body,:published,:image)
+     params.require(:post).permit(:title,:body,:published,:image,:arabic)
     end
     def check_user
       if current_user.present?
