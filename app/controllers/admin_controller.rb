@@ -8,18 +8,18 @@ class AdminController < ApplicationController
   def index
     @users_count= User.all.count
   	if current_user.user_type == "superAdmin"
-      if @l == :fr
-  		@posts_count= Post.all.where(arabic: false).count
-    else
-      @posts_count= Post.all.where(arabic: true).count
-    end
+      
+  		@posts_count= Post.all.count
+    
+      
+    
   		else
   		@users_count= nil
-      if @l == :fr
-        @posts_count= current_user.posts.all.where(arabic: false).count
-      else
-        @posts_count= current_user.posts.all.where(arabic: true).count
-      end
+      
+        @posts_count= current_user.posts.all.count
+      
+        
+      
   	end
   end
   def user_data
@@ -67,18 +67,18 @@ class AdminController < ApplicationController
   end
   def posts
   	if current_user.user_type == "superAdmin"
-      if @l == :fr
-        @posts= Post.all.where(arabic: false)
-      else
-        @posts= Post.all.where(arabic: true)
-      end
+      
+        @posts= Post.all
+      
+        
+      
   		
   	else
-      if @l == :fr
-  	    @posts= current_user.posts.all.where(arabic: false)
-      else
-        @posts= current_user.posts.all.where(arabic: true)
-      end
+      
+  	    @posts= current_user.posts.all
+      
+        
+      
   	end
   end
   def post_new
