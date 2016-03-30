@@ -18,9 +18,9 @@
         <div class="row page-row">
           <div class="news-wrapper col-md-8 col-sm-7">
             <article class="news-item">
-              <p class="meta text-muted">By: <a href="#">Admin</a> | Posted on: <%= @post.published_at %></p>
+              <p class="meta text-muted">By: <a href="#"><%= @post.user.email %></a> | Posted on: <%= @post.published_at %></p>
 
-              <p class="featured-image"><%= image_tag("news/news-1.jpg", class: "img-responsive") %></p>
+              <p class="featured-image"><%= image_tag @post.image.url(:original), class: "img-responsive" %></p>
               <%= simple_format(@post.body, {}, sanitize: false) %>
             </article><!--//news-item-->
           </div><!--//news-wrapper-->
@@ -56,9 +56,9 @@
         <div class="row page-row">
           <div class="news-wrapper col-md-8 col-sm-7">
             <article class="news-item">
-              <p class="meta text-muted">By: <a href="#">Admin</a> | Posted on: <%= @post.published_at %></p>
+              <p class="meta text-muted">By: <a href="#"><%= @post.user.email %></a> | Posted on: <%= @post.published_at %></p>
 
-              <p class="featured-image"><%= image_tag("news/news-1.jpg", class: "img-responsive") %></p>
+              <p class="featured-image"><%= image_tag @post.image.url(:original), class: "img-responsive" %></p>
               <%= simple_format(@post.body, {}, sanitize: false) %>
             </article><!--//news-item-->
           </div><!--//news-wrapper-->
