@@ -36,7 +36,7 @@ class AdminController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_user_data_path, notice: 'User was successfully created.' }
+        format.html { redirect_to admin_user_data_path, notice: t('forms.messages.success') }
         format.json { render :user_data, status: :created, location: @user }
       else
         format.html { render :user_new }
@@ -50,7 +50,7 @@ class AdminController < ApplicationController
   def user_update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to admin_user_data_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_user_data_path, notice: t('forms.messages.success') }
         format.json { render :user_data, status: :ok, location: @user }
       else
         format.html { render :user_edit }
@@ -61,7 +61,7 @@ class AdminController < ApplicationController
   def user_destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_user_data_path, notice: 'user was successfully destroyed.' }
+      format.html { redirect_to admin_user_data_path, notice: t('forms.messages.success') }
       format.json { head :no_content }
     end
   end
@@ -94,7 +94,7 @@ class AdminController < ApplicationController
   	
     respond_to do |format|
       if @post.save
-        format.html { redirect_to admin_posts_path, notice: 'Post was successfully created.' }
+        format.html { redirect_to admin_posts_path, notice: t('forms.messages.success') }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -115,7 +115,7 @@ class AdminController < ApplicationController
           @post.published_at= nil
           @post.save
         end
-        format.html { redirect_to admin_posts_path, notice: 'post was successfully updated.' }
+        format.html { redirect_to admin_posts_path, notice: t('forms.messages.success') }
         format.json { render :user_data, status: :ok, location: @post }
       else
         format.html { render :user_edit }
