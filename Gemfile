@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.18.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -50,7 +50,7 @@ end
 group :production do
 # Heroku
   gem 'rails_12factor'
-  gem 'pg'
+  gem 'pg', '~> 0.18.4'
 end
 
 gem 'bootstrap-sass', '~> 3.3.5'
