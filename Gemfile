@@ -59,7 +59,7 @@ gem 'will_paginate'
 
 gem 'globalize', '~> 5.0.0'
 
-gem 'devise', '~> 3.2'
+gem 'devise', '~> 4.7'
 gem 'devise-bootstrap-views'
 
 gem 'paperclip', '~> 4.3'
